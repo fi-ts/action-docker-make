@@ -1,0 +1,19 @@
+name: action-docker-make
+description: Wraps docker-make as a GitHub action
+author: metal-stack
+branding:
+  icon: shield
+  color: blue
+inputs:
+  username:
+    description: username for the docker hub
+    required: false
+  password:
+    description: password for the docker hub
+    required: false
+  args:
+    description: arguments to docker-make
+    required: false
+runs:
+  using: docker
+  image: Dockerfile
