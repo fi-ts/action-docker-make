@@ -3,12 +3,7 @@
 echo "" 
 cd "${GITHUB_WORKSPACE}"
 
-if [ ! -z "${INPUT_USERNAME}" ]; then
-    echo ${INPUT_PASSWORD} | docker login -u ${INPUT_USERNAME} --password-stdin
-fi
+export REGISTRY_LOGIN_USER="${INPUT_USERNAME}"
+export REGISTRY_LOGIN_PASSWORD="${INPUT_PASSWORD}"
 
 docker-make "${INPUT_ARGS}"
-
-if [ ! -z "${INPUT_USERNAME}" ]; then
-    docker logout
-fi
