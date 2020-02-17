@@ -4,6 +4,14 @@ Wraps `docker-make` as a GitHub action.
 
 ## Inputs
 
+### `username`
+
+Username for the registry.
+
+### `password`
+
+Password for the registry.
+
 ### `args`
 
 Command and/or arguments to pass to `docker-make`.
@@ -17,7 +25,7 @@ Command and/or arguments to pass to `docker-make`.
   with:
     username: "dockerhubuser"
     password: "dockerhubpassword"
-    args: --Lint --summary
+    args: --summary
 ```
 
 ## Docker-make usage
