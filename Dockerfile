@@ -1,4 +1,4 @@
-FROM ubuntu:19.04
+FROM ubuntu:19.10
 
 LABEL repository="https://github.com/metal-stack/action-docker-make"
 LABEL maintainer="Metal Stack Authors <info@metal-stack.io>"
@@ -18,7 +18,7 @@ RUN apt-get update \
  && pip install setuptools \
  && pip install --extra-index-url https://pypi.fi-ts.io docker-make \
  && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - \
- && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu disco stable" \
+ && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu eoan stable" \
  && apt-get update \
  && apt-get --yes install --no-install-recommends docker-ce
 
