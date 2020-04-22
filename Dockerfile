@@ -1,7 +1,7 @@
 FROM ubuntu:19.10
 
 LABEL repository="https://github.com/metal-stack/action-docker-make"
-LABEL maintainer="Metal Stack Authors <info@metal-stack.io>"
+LABEL maintainer="metal-stack authors <info@metal-stack.io>"
 
 RUN apt-get update \
  && apt-get --yes install --no-install-recommends \
