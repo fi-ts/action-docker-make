@@ -3,7 +3,7 @@ FROM ubuntu:19.10
 LABEL repository="https://github.com/metal-stack/action-docker-make"
 LABEL maintainer="metal-stack authors <info@metal-stack.io>"
 
-ARG DOCKER_MAKE_VERSION=v0.3.1
+ARG DOCKER_MAKE_VERSION=v0.3.2
 
 RUN apt-get update \
  && apt-get --yes install --no-install-recommends \
