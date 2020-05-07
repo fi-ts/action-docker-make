@@ -3,14 +3,14 @@ FROM ubuntu:19.10
 LABEL repository="https://github.com/metal-stack/action-docker-make"
 LABEL maintainer="metal-stack authors <info@metal-stack.io>"
 
-ARG DOCKER_MAKE_VERSION=v0.3.2
+ARG DOCKER_MAKE_VERSION=v0.3.3
 
 RUN apt-get update \
- && apt-get --yes install --no-install-recommends \
+ && DEBIAN_FRONTEND=noninteractive apt-get --yes install --no-install-recommends \
     apt-transport-https \
     ca-certificates \
     curl \
-    gnupg-agent \
+    gnupg2 \
     git \
     lz4 \
     software-properties-common \

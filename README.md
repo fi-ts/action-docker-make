@@ -19,7 +19,7 @@ Command and/or arguments to pass to `docker-make`.
 ## Example usage
 
 ```yaml
-- uses: actions/checkout@v2
+- uses: actions/checkout@v3
 - name: Run docker-make
   uses: metal-stack/action-docker-make@master
   with:
