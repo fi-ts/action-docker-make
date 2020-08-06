@@ -1,27 +1,8 @@
-FROM ubuntu:19.10
-
+ARG DOCKER_MAKE_VERSION=alpine
+FROM metalstack/docker-make:${DOCKER_MAKE_VERSION}
 LABEL repository="https://github.com/metal-stack/action-docker-make"
 LABEL maintainer="metal-stack authors <info@metal-stack.io>"
-
-ARG DOCKER_MAKE_VERSION=v0.3.3
-
-RUN apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get --yes install --no-install-recommends \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg2 \
-    git \
-    lz4 \
-    software-properties-common \
- && curl -fsSLo /usr/local/bin/docker-make https://github.com/fi-ts/docker-make/releases/download/${DOCKER_MAKE_VERSION}/docker-make-linux-amd64 \
- && chmod +x /usr/local/bin/docker-make \
- && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - \
- && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu eoan stable" \
- && apt-get update \
- && apt-get --yes install --no-install-recommends docker-ce
-
 COPY LICENSE README.md /
 COPY entrypoint.sh /
-
+RUN mv /docker-make /usr/local/bin/docker-make
 ENTRYPOINT ["/entrypoint.sh"]
