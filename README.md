@@ -1,6 +1,6 @@
 # GitHub Action for `docker-make`
 
-Wraps `docker-make` as a GitHub action.
+Wraps [docker-make](https://github.com/fi-ts/docker-make) as a GitHub action.
 
 ## Inputs
 
@@ -21,7 +21,7 @@ Command and/or arguments to pass to `docker-make`.
 ```yaml
 - uses: actions/checkout@v3
 - name: Run docker-make
-  uses: metal-stack/action-docker-make@master
+  uses: fi-ts/action-docker-make@v0.3.4
   with:
     username: "dockerhubuser"
     password: "dockerhubpassword"
